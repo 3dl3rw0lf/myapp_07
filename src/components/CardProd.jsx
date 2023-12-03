@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import ButtonBuy from "./ButtonBuy";
 
-const CardProd = ({ prod }) => {
+const CardProd = ({ prod, onPurchase }) => {
 
 
 
@@ -21,7 +21,7 @@ const CardProd = ({ prod }) => {
                         <p className="card-text">SKU: <small className="text-body-secondary">{prod.SKU}</small></p>
                         <p className="card-text">Cantidad disponible: <small className="text-body-secondary">{prod.cantidad}</small></p>
                         <p className="card-text"><small className="text-body-secondary">ültima actualización hace 3 minutos</small></p>
-                        {typeof prod.cantidad === 'number' && prod.cantidad > 0 && <ButtonBuy />}
+                        {typeof prod.cantidad === 'number' && prod.cantidad > 0 && <ButtonBuy onClick={onPurchase}/>}
                     </div>
                 </div>
             </div>
